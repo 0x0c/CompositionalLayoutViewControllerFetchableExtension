@@ -7,7 +7,6 @@
 
 import Combine
 import Foundation
-import Promises
 
 public protocol CollectionViewFetchablePresenterInput {
     var isLoadingPublisher: Published<Bool>.Publisher { get }
