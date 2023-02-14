@@ -10,7 +10,8 @@ import Foundation
 
 public protocol CollectionViewFetchableInteractorInput: AnyObject {
     func reload() async throws
-    func fetch(force: Bool) async throws
+    @discardableResult
+    func fetch(force: Bool) async throws -> [CollectionViewSection]
 }
 
 public extension CollectionViewFetchableInteractorInput {
@@ -18,7 +19,8 @@ public extension CollectionViewFetchableInteractorInput {
         try await fetch(force: true)
     }
 
-    func fetch(force: Bool = false) async throws {
-        try await fetch(force: force)
+    @discardableResult
+    func fetch(force: Bool = false) async throws -> [CollectionViewSection] {
+        return try await fetch(force: force)
     }
 }
