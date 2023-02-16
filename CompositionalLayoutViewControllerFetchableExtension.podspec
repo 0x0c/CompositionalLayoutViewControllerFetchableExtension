@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CompositionalLayoutViewControllerFetchableExtension'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Extensions for CompositionalLayoutViewController with VIPER'
   s.swift_versions   = '5.5'
   s.description      = 'Some extensions for CompositionalLayoutViewController with VIPER.'
@@ -26,6 +26,7 @@ Pod::Spec.new do |s|
     ss.source_files = 'Sources/SwiftConcurrency/*'
   end
   s.subspec 'Promises' do |ss|
+    ss.module_name = 'CompositionalLayoutViewControllerFetchableExtensionPromises'
     ss.source_files = 'Sources/Promises/*'
     ss.dependency 'PromisesSwift', '>= 2.0.0'
   end
