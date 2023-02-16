@@ -20,15 +20,13 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '13.0'
   s.frameworks = 'UIKit'
-  s.dependency 'CompositionalLayoutViewController', '>= 0.1.0'
-  s.dependency 'CompositionalLayoutViewControllerExtension', '>= 0.1.0'
+  s.dependency 'CompositionalLayoutViewControllerExtension', '>= 0.1.1'
 
-  s.subspec 'Concurrency' do |ss|
+  s.subspec 'SwiftConcurrency' do |ss|
     ss.source_files = 'Sources/SwiftConcurrency/*'
   end
   s.subspec 'Promises' do |ss|
     ss.source_files = 'Sources/Promises/*'
-    ss.frameworks = 'Promises'
+    ss.dependency 'PromisesSwift', '>= 2.0.0'
   end
 end
-
