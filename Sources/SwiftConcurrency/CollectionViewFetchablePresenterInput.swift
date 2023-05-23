@@ -21,8 +21,6 @@ public extension CollectionViewFetchablePresenterInput {
     }
 
     func fetch(force: Bool = false) {
-        Task {
-            try await fetch(force: force)
-        }
+        fetch(force: force)
     }
 }
